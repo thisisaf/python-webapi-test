@@ -6,17 +6,37 @@ app = Flask(__name__,
 
 records = [
     {
-        'name': 'Alice',
-        'age': 25
+        'id': 1,
+        'title': 'Administrator',
+        'salary': 25000,
+        'currency': '£',
+        'short-description': 'This is a description of the job',
+        'posted': '2023-01-01'
     },
     {
-        'name': 'Bob',
-        'age': 30
+        'id': 2,
+        'title': 'Barman',
+        'salary': 30000,
+        'currency': '£',
+        'short-description': 'This is a description of the job',
+        'posted': '2023-02-01'
     },
     {
-        'name': 'Charlie',
-        'age': 35
+        'id': 3,
+        'title': 'Cleaner',
+        'salary': 99000,
+        'currency': '$',
+        'short-description': 'This is a description of the job',
+        'posted': '2023-03-01'
     },
+    {
+        'id': 4,
+        'title': 'Data Scientist',
+        'salary': 35000,
+        'currency': '£',
+        'short-description': 'This is a description of the job',
+        'posted': '2023-04-01'
+    }
 ]
 
 
