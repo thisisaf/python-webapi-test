@@ -4,6 +4,13 @@
 
 This project is a simple Python web API that serves a static HTML page. The API is built using Flask, and the HTML page is served using the Flask `send_from_directory` function.
 
+
+## Example
+
+When you navigate to `http://127.0.0.1:5000`, you should see the content of `index.html` displayed in your web browser. When you navigate to `http://127.0.0.1:5000/api/data`, you should receive a JSON response with sample data.
+
+This project is a simple Python web API that serves a static HTML page. The API is built using Flask, and the HTML page is served using the Flask `send_from_directory` function.
+
 ## Files
 
 - `app.py`: The main Python file that sets up the Flask web server and defines the API endpoints.
