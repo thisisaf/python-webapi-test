@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import json
+from datetime import datetime
 
 app = Flask(__name__,
              template_folder='templates',
@@ -46,7 +47,7 @@ records = [
         'currency': '£',
         'short-description': 'Analyze data and develop models',
         'long-description': 'As a Data Scientist, you will be responsible for analyzing complex data sets, developing predictive models, and providing insights to drive business decisions.',
-        'posted': '2023-04-01',
+        'posted': '2024-12-23',
         'active': True,
         'location': 'San Francisco, USA'
     }
@@ -55,22 +56,18 @@ records = [
 
 @app.route('/')
 def home():
+    for record in records:
+        posted_date = datetime.strptime(record['posted'], '%Y-%m-%d')
+        record['days_ago'] = (datetime.now() - posted_date).days
     return render_template('index.html', records=records)
 
-# @app.route('/foo/<int:id>')
-# def foo(id):
-#     record = next((record for record in records if record['id'] == id), None)
-#     if record is None:
-#         return {"error": "Record not found"}, 404
-#     #return render_template('index.html', records=records)
-#     return render_template('apply_details.html', record=record)
 
 @app.route('/apply/<int:id>')
 def apply(id):
     record = next((record for record in records if record['id'] == id), None)
     if record is None:
         return {"error": "Record not found"}, 404
-    #TODO: Here you can add logic to handle the application process
+
     return render_template('apply_details.html', record=record)
 
 @app.route('/submit_application', methods=['POST'])

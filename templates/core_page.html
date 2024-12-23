@@ -4,6 +4,8 @@
 
         {% for record in records %}
 
+        {{ testaf }}
+
         <div class="col">
             <div class="card shadow-sm">
                 <div class="card-body">
@@ -20,7 +22,8 @@
                             <a href="#" class="btn btn-sm btn-outline-secondary disabled">Unavailable</a>
                             {% endif %}
                         </div>
-                        <small class="text-body-secondary">Posted date: {{ record['posted'] }}</small>
+
+                        <small class="text-body-secondary">Posted: {{ record['days_ago'] }} days ago</small>
                     </div>
                 </div>
             </div>
